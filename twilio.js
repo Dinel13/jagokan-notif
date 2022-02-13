@@ -20,7 +20,6 @@ function formatPhone(phone) {
 module.exports = {
   sendWa: (data) => {
     console.log(data);
-
     if (data.to === "mulai-belajar") {
       // for siudent
       client.messages
@@ -45,15 +44,14 @@ Tim Jagokan`,
           to: "whatsapp:+62" + formatPhone(data.student_phone),
         })
         .then((message) => console.log(message.sid))
-        .catch(err => console.log(err));
+        .catch((err) => console.log(err));
 
       // for guru
-      setTimeout(
-        client.messages
-          .create({
-            from: "whatsapp:+14155238886",
-            //   body: "Your 2 code is 2, in iadalah uji coba ",
-            body: `Halo *${data.teacher}*, \n
+      client.messages
+        .create({
+          from: "whatsapp:+14155238886",
+          //   body: "Your 2 code is 2, in iadalah uji coba ",
+          body: `Halo *${data.teacher}*, \n
 Selamat, seorang siswa saja berhasil melakukan pembayan untuk kelas *${data.course}* kamu.
 Segera hubungi siswa tersebut untuk memulai sesi pembelajaran. Berikut data pesanan kelas kamu :
 *Nama kelas:* ${data.course}
@@ -68,14 +66,13 @@ Jika ada pertanyaan silahkan hubungi kami di whatsapp 0812-898-8981 atau ke emai
  
 Terima kasih.
 Tim Jagokan`,
-            to: "whatsapp:+62" + formatPhone(data.teacher_phone),
-          })
-          .then((message) => console.log(message.sid))
-          .catch(err => console.log(err)),
-        3000
-      );
+          to: "whatsapp:+62" + formatPhone(data.teacher_phone),
+        })
+        .then((message) => console.log(message.sid))
+        .catch((err) => console.log(err));
     } else {
       return;
     }
+    return;
   },
 };
