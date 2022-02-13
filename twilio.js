@@ -26,9 +26,11 @@ module.exports = {
         .create({
           from: "whatsapp:+14155238886",
           //   body: "Your 2 code is 2, in iadalah uji coba ",
-          body: `Halo *${data.student}*, \n
-Selamat, kamu baru saja berhasil melakukan pembayan untuk kelas *${data.course}*.
-Pengajar akan segera menghubungi kamu. Kamu juga bisa konfirmasi langsung ke pengajarnya. Berikut data kelas kamu :
+          body: `Halo *${data.student}*,
+Kami dari tim Jagokan,
+
+Selamat, kamu telah berhasil melakukan pembayan kelas di Jagokan.
+Berikut data pesanan kelas kamu :
  *Nama kelas:* ${data.course}
  *Jadwal kelas:* ${data.jadwal_belajar} pukul ${data.jam_belajar}
  *Preferensi belajar:* ${data.preferensi_belajar} 
@@ -37,7 +39,9 @@ Pengajar akan segera menghubungi kamu. Kamu juga bisa konfirmasi langsung ke pen
  *Email Pengajar:* ${data.teacher_email}
  *No. Telp Pengajar:* ${data.teacher_phone}
 
-Jika ada pertanyaan silahkan hubungi kami di whatsapp 0812-898-8981 atau ke email help.jagokan@gmail.com,
+Pengajar akan menghubungi anda untuk memulai sesi pembelajaran.
+
+Jika ada pertanyaan silahkan hubungi kami di whatsapp 082346462435 atau ke email jagokan.id@gmail.com,
 
 Terima kasih.
 Tim Jagokan`,
@@ -51,18 +55,20 @@ Tim Jagokan`,
         .create({
           from: "whatsapp:+14155238886",
           //   body: "Your 2 code is 2, in iadalah uji coba ",
-          body: `Halo *${data.teacher}*, \n
-Selamat, seorang siswa saja berhasil melakukan pembayan untuk kelas *${data.course}* kamu.
-Segera hubungi siswa tersebut untuk memulai sesi pembelajaran. Berikut data pesanan kelas kamu :
-*Nama kelas:* ${data.course}
-*Jadwal kelas:* ${data.jadwal_belajar} pukul ${data.jam_belajar}
-*Preferensi belajar:* ${data.preferensi_belajar}
-*jumlah pesanan:* ${data.jumlah}
-*Nama siswa:* ${data.student}
-*Email Siswa:* ${data.student_email}
-*No. Telp Siswa:* ${data.student_phone}
+          body: `Halo *${data.teacher}*,
+Kami dari tim Jagokan,
 
-Jika ada pertanyaan silahkan hubungi kami di whatsapp 0812-898-8981 atau ke email help.jagokan@gmail.com,
+Selamat, kamu telah mendapatkan pesanan kelas baru dari seorang murid di Jagokan.
+Segera hubungi murid tersebut untuk memulai sesi pembelajaran.
+ *Nama kelas:* ${data.course}
+ *Jadwal kelas:* ${data.jadwal_belajar} pukul ${data.jam_belajar}
+ *Preferensi belajar:* ${data.preferensi_belajar}
+ *jumlah pesanan:* ${data.jumlah}
+ *Nama siswa:* ${data.student}
+ *Email Siswa:* ${data.student_email}
+ *No. Telp Siswa:* ${data.student_phone}
+
+Jika ada pertanyaan silahkan hubungi kami di whatsapp 082346462435 atau ke email jagokan.id@gmail.com,
  
 Terima kasih.
 Tim Jagokan`,
