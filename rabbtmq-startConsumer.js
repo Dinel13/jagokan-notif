@@ -16,10 +16,10 @@ module.exports = {
 
       // Set prefetch value
       //  ch.prefetch(process.env.CLOUDAMQP_CONSUMER_PREFETCH ? process.env.CLOUDAMQP_CONSUMER_PREFETCH : 10);
-      ch.prefetch(10);
+      ch.prefetch(20);
 
       // Connect to queue
-      ch.assertQueue(queue, { durable: true }, function (err, _ok) {
+      ch.assertQueue(queue, { durable: false }, function (err, _ok) {
         if (closeOnErr(err)) return;
         // Consume incoming messages
         ch.consume(queue, processMsg, { noAck: false });
@@ -29,7 +29,7 @@ module.exports = {
       function processMsg(msg) {
         // Process incoming messages and send them to fnConsumer
         // Here we need to send a callback(true) for acknowledge the message or callback(false) for reject them
-        fnConsumer(queue, msg, function (ok) {
+        fnConsumer(msg, function (ok) {
           try {
             ok ? ch.ack(msg) : ch.reject(msg, true);
           } catch (e) {
